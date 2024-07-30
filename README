@@ -1,6 +1,7 @@
 deps:
 alacritty
 dmenu
+hack font
 
 dwm - dynamic window manager
 ============================
