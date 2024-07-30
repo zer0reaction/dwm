@@ -1093,7 +1093,7 @@ manage(Window w, XWindowAttributes *wa)
 		c->isfloating = c->oldstate = trans != None || c->isfixed;
 	if (c->isfloating)
 		XRaiseWindow(dpy, c->win);
-    if( attachbelow )
+    if(isattachbelow)
         attachbelow(c);
     else
     attach(c);
@@ -1473,7 +1473,7 @@ sendmon(Client *c, Monitor *m)
     detachstack(c);
     c->mon = m;
     c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
-    if( attachbelow )
+    if(isattachbelow)
         attachbelow(c);
     else
         attach(c);
@@ -1964,7 +1964,7 @@ updategeom(void)
                 m->clients = c->next;
                 detachstack(c);
                 c->mon = mons;
-                if( attachbelow )
+                if(isattachbelow)
                     attachbelow(c);
                 else
                     attach(c);
